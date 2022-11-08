@@ -1,27 +1,13 @@
 <template>
   <section id="imageType" class="image__wrap" :class="attr">
-    <h2>귀여운 댕댕이</h2>
-    <p>뭐니뭐니해도 귀여운 동물 하면 강아지죠. 우선 강아지들을 보세요.</p>
+    <h2>{{title}}</h2>
+    <p>{{desc}}</p>
     <div class="image__inner" :class="layout">
-      <div class="image img1">
-        <h3 class="image__title">Shih Tzu</h3>
-        <p class="image__desc">
-          표정이 약간 멍청해 보이는 게 정말 귀엽습니다.
-          <br />
-          실제로도 멍청할 것 같습니다.
-        </p>
-        <a class="image__btn" href="/" title="자세히 보기">
-          <div class="more">자세히 보기</div>
-        </a>
-      </div>
-      <div class="image img2">
-        <h3 class="image__title">French Bulldog</h3>
-        <p class="image__desc">
-          볼수록 매력있는 견종입니다.
-          <br />
-          침을 아주 줄줄 흘린다고 합니다.
-        </p>
-        <a class="image__btn blue" href="/" title="자세히 보기">
+      <div class="image" :class="text.img"
+      v-for="text in texts" v-bind:key="text.text">
+        <h3 class="image__title">{{text.title}}</h3>
+        <p class="image__desc">{{text.desc}}</p>
+        <a class="image__btn" :class="text.class" :href="text.link" title="자세히 보기">
           <div class="more">자세히 보기</div>
         </a>
       </div>
@@ -34,6 +20,28 @@ export default {
     attr: String,
     layout: String,
   },
+  data() {
+    return {
+      title: "귀여운 댕댕이",
+      desc: "뭐니뭐니해도 귀여운 동물 하면 강아지죠. 우선 강아지들을 보세요.",
+      texts: [
+        {
+          img: "img1",
+          title: "Shih Tzu",
+          desc: "표정이 약간 멍청해 보이는 게 정말 귀엽습니다. 실제로도 멍청할 것 같습니다.",
+          link: "/",
+          class: ""
+        },
+        {
+          img: "img2",
+          title: "French Bulldog",
+          desc: "볼수록 매력있는 견종입니다. 침을 아주 줄줄 흘린다고 합니다. 그래도 귀엽죠?",
+          link: "/",
+          class: "blue"
+        }
+      ]
+    }
+  }
 };
 </script>
 <style>

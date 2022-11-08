@@ -15,12 +15,10 @@
   >
     <swiper-slide>
       <div class="desc">
-        <span>ANIMAL</span>
-        <h3>CUTE ANIMAL</h3>
+        <span>{{subTitle}}</span>
+        <h3>{{title}}</h3>
         <p>
-          숙제에 지친 이들을 위한 힐링 공간입니다.
-          <br />
-          귀여운 동물들을 보며 잠시나마 현실도피를 합시다.
+          {{desc}}
         </p>
         <div class="btn">
           <a href="/">자세히 보기</a>
@@ -30,12 +28,10 @@
     </swiper-slide>
     <swiper-slide>
       <div class="desc">
-        <span>ANIMAL</span>
-        <h3>CUTE ANIMAL</h3>
+        <span>{{subTitle}}</span>
+        <h3>{{title}}</h3>
         <p>
-          숙제에 지친 이들을 위한 힐링 공간입니다.
-          <br />
-          귀여운 동물들을 보며 잠시나마 현실도피를 합시다.
+          {{desc}}
         </p>
         <div class="btn">
           <a href="/">자세히 보기</a>
@@ -45,12 +41,10 @@
     </swiper-slide>
     <swiper-slide>
       <div class="desc">
-        <span>ANIMAL</span>
-        <h3>CUTE ANIMAL</h3>
+        <span>{{subTitle}}</span>
+        <h3>{{title}}</h3>
         <p>
-          숙제에 지친 이들을 위한 힐링 공간입니다.
-          <br />
-          귀여운 동물들을 보며 잠시나마 현실도피를 합시다.
+          {{desc}}
         </p>
         <div class="btn">
           <a href="/">자세히 보기</a>
@@ -84,6 +78,14 @@ export default {
       modules: [Autoplay, Pagination, Navigation],
     };
   },
+  data() {
+    return {
+      subTitle: "ANIMAL",
+      title: "CUTE ANIMAL",
+      desc: "숙제에 지친 이들을 위한 힐링 공간입니다. 귀여운 동물들을 보며 잠시나마 현실도피를 합시다.",
+      link: "/"
+    }
+  }
 };
 </script>
 <style>

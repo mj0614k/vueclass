@@ -1,40 +1,37 @@
 <template>
   <section id="imgTextType" class="image__wrap" :class="attr">
-    <h2 class="blind">고양이가 빠지면 섭하다</h2>
+    <h2 class="blind">{{subTitle}}</h2>
     <div class="imgText__inner" :class="layout">
       <div class="imgText__txt">
-        <span>고양이 영역</span>
-        <h3>고양이가 빠지면 섭하다</h3>
+        <span>{{subTitle}}</span>
+        <h3>{{title}}</h3>
         <p>
-          고양이가 성격은 나쁘다지만, <br />
-          강아지들도 다 좋은 녀석들만은 아니잖아요.
+         {{desc}} 
         </p>
         <ul>
           <li>
-            <a href="/">Persian</a>
+            <a href="/">{{li1}}</a>
           </li>
           <li>
-            <a href="/">Siamese</a>
+            <a href="/">{{li2}}</a>
           </li>
           <li>
-            <a href="/">Sphynx</a>
+            <a href="/">{{li3}}</a>
           </li>
           <li>
-            <a href="/">ragdoll</a>
+            <a href="/">{{li4}}</a>
           </li>
           <li>
-            <a href="/">Scottish Fold</a>
+            <a href="/">{{li5}}</a>
           </li>
           <li>
-            <a href="/">Turkish angora</a>
+            <a href="/">{{li6}}</a>
           </li>
         </ul>
       </div>
-      <div class="imgText__img img1">
-        <a href="/">옷자락 물어뜯기기</a>
-      </div>
-      <div class="imgText__img img2">
-        <a class="blue" href="/"> 냥냥펀치 후드려 맞기 </a>
+      <div class="imgText__img" :class="text.img"
+      v-for="text in texts" v-bind:key="text.text">
+        <a href="/" :class="text.class">{{text.desc}}</a>
       </div>
     </div>
   </section>
@@ -45,6 +42,31 @@ export default {
     attr: String,
     layout: String,
   },
+  data() {
+    return {
+      subTitle: "고양이 영역",
+      title: "고양이가 빠지면 섭하다",
+      desc: "고양이가 성격은 나쁘다지만, 강아지들도 다 좋은 녀석들만은 아니잖아요.",
+      li1: "Persian",
+      li2: "Siamese",
+      li3: "Sphynx",
+      li4: "ragdoll",
+      li5: "Scottish Fold",
+      li6: "Turkish angora",
+      texts: [
+        {
+          img: "img1",
+          class: "",
+          desc: "옷자락 물어뜯기기"
+        },
+        {
+          img: "img2",
+          class: "blue",
+          desc: "냥냥펀치 후드려 맞기"
+        }
+      ]
+    }
+  }
 };
 </script>
 <style>

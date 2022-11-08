@@ -5,7 +5,7 @@
       <h3 class="title">{{ title }}</h3>
       <p class="desc">
         {{ desc }}
-        <a href="{{link}}" title="깃허브 페이지로 이동">{{ linkDesc }}</a>
+        <a :href="link" title="깃허브 페이지로 이동">{{ linkDesc }}</a>
       </p>
       <span class="small">{{ subDesc }}</span>
     </div>
