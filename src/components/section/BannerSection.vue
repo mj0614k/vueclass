@@ -1,15 +1,13 @@
 <template>
   <section id="bannerType" class="banner__wrap" :class="attr">
-    <h2 class="blind">배너 영역</h2>
+    <h2 class="blind">{{ subTitle }}</h2>
     <div class="banner__inner">
-      <h3 class="title">잘 보셨나요?</h3>
+      <h3 class="title">{{ title }}</h3>
       <p class="desc">
-        이제 현실을 직시하시고, 아래의 주소를 눌러 깃허브로 이동하세요.
-        <a href="https://github.com/" title="깃허브 페이지로 이동">
-          github.com
-        </a>
+        {{ desc }}
+        <a href="{{link}}" title="깃허브 페이지로 이동">{{ linkDesc }}</a>
       </p>
-      <span class="small">Get out and do homework!</span>
+      <span class="small">{{ subDesc }}</span>
     </div>
   </section>
 </template>
@@ -17,6 +15,16 @@
 export default {
   props: {
     attr: String,
+  },
+  data() {
+    return {
+      subTitle: "배너 영역",
+      title: "잘 보셨나요?",
+      desc: "이제 현실을 직시하시고, 아래의 주소를 눌러 깃허브로 이동하세요.",
+      link: "https://github.com/",
+      linkDesc: "github.com",
+      subDesc: "Get out and do homework!",
+    };
   },
 };
 </script>
